@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page in HTML with CSS Code Example</title>
+  <link href="https://fonts.gstatic.com/s/opensans/v34/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4taVIGxA.woff2" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+</head>
+<body onload="cap()">
+<div class="box-form">
+	<div class="left">
+		<div class="overlay">
+		<h1>Welcome User.</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		Curabitur et est sed felis aliquet sollicitudin</p>
+		<span>
+			<p>login with social media</p>
+			<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+			<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i> Login with Twitter</a>
+		</span>
+		</div>
+	</div>
+	
+	
+		<div class="right">
+		<h5>Login</h5>
+		<p>Don't have an account? <a href="#">Creat Your Account</a> it takes less than a minute</p>
+		<div class="inputs">
+			<input type="User" placeholder="user name">
+			<br>
+			<input type="password" placeholder="password">
+		</div>
+			
+			<br>
+			<form>  
+				<span class="cin">
+					<input type="text" name="Name" size="20" id="textinput" placeholder="enter captcha">
+				</span>  
+				<span class="captcha">
+					<input type="text" name="Name" size="20" id="capt" placeholder="enter captcha">
+				</span> 
+				<span><i class="fa fa-refresh reload" aria-hidden="true" onclick="cap()"></i></span>
+				<br>
+				</form>  
+			<br>
+		<div class="remember-me--forget-password">
+	<label>
+		<input type="checkbox" name="item" checked/>
+		<span class="text-checkbox">Remember me</span>
+	</label>
+			<p>forget password?</p>
+		</div>
+			
+			<br>
+			<button onclick="validcap()">Login</button>
+	</div>
+	
+</div>
+<script type="text/javascript">
+	function cap(){
+	  var alpha = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V'
+				   ,'W','X','Y','Z','1','2','3','4','5','6','7','8','9','0','a','b','c','d','e','f','g','h','i',
+				   'j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z', '!','@','#','$','%','^','&','*','+'];
+				   var a = alpha[Math.floor(Math.random()*71)];
+				   var b = alpha[Math.floor(Math.random()*71)];
+				   var c = alpha[Math.floor(Math.random()*71)];
+				   var d = alpha[Math.floor(Math.random()*71)];
+				   var e = alpha[Math.floor(Math.random()*71)];
+				   var f = alpha[Math.floor(Math.random()*71)];
+  
+				   var final = a+b+c+d+e+f;
+				   document.getElementById("capt").value=final;
+				 }
+				 function validcap(){
+				  var stg1 = document.getElementById('capt').value;
+				  var stg2 = document.getElementById('textinput').value;
+				  if(stg1==stg2){
+					alert("Form is validated Succesfully");
+					return true;
+				  }else{
+					alert("Please enter a valid captcha");
+					return false;
+				  }
+				 }
+  </script>
+</body>
+script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</html>
